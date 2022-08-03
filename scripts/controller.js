@@ -18,6 +18,20 @@ function addStudent() {
   const student = operations.create(id, name, roll, standard, section);
 
   addToTable(student);
+  
+  clearValues();
+}
+
+function clearValues(){
+  const name = document.querySelector("#name");
+  const roll = document.querySelector("#roll");
+  const standard = document.querySelector("#standard");
+  const section = document.querySelector("#section");
+  
+  name.value="";
+  roll.value="";
+  standard.value="";
+  section.value="";
 }
 
 function addToTable(student) {
@@ -60,7 +74,7 @@ function deleteStudent() {
   var icon = this;
   var row = icon.parentNode.parentNode;
   
-  const studentList=operations.delete(StudentId);
+  operations.delete(StudentId);
   
   row.replaceChildren();
 }
